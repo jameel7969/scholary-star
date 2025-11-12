@@ -125,7 +125,7 @@ const Header = () => {
                 {n.label}
               </NavLink>
             ))}
-            <div className="flex flex-col gap-3 pt-4 border-t border-slate-200">
+            {/* <div className="flex flex-col gap-3 pt-4 border-t border-slate-200">
               {auth && auth.token ? (
                 <button
                   onClick={() => {
@@ -157,7 +157,7 @@ const Header = () => {
                   </Link>
                 </>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       )}
