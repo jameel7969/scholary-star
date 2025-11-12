@@ -1,29 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import pageHeaderBg from '../assets/page-header-bg.png'
-import shapeArrow from '../assets/page-header-shape-1.png'
-import Breadcrumbs from '../components/Breadcrumbs'
+import pageHeaderBg from "../assets/page-header-bg.png";
+import shapeArrow from "../assets/page-header-shape-1.png";
+import Breadcrumbs from "../components/Breadcrumbs";
+
+// ✅ Import all blog images
+import edBlog07 from "../assets/ed-blog-07.jpg";
+import edBlog11 from "../assets/ed-blog-11.jpg";
+import course09 from "../assets/course-09.jpg";
 
 const Blog = () => {
   const posts = [
     {
       id: 1,
       title: "Student Achievement Best Practice for Schools",
-      image: "/src/assets/ed-blog-07.jpg",
+      image: edBlog07,
       date: "Dec 12, 2024",
       tag: "Development",
     },
     {
       id: 2,
       title: "The Importance of Integrating Arts into Education",
-      image: "/src/assets/ed-blog-11.jpg",
+      image: edBlog11,
       date: "Dec 12, 2024",
       tag: "Development",
     },
     {
       id: 3,
       title: "How To Learn Faster With Spaced Repetition",
-      image: "/src/assets/course-09.jpg",
+      image: course09,
       date: "Nov 30, 2024",
       tag: "Learning",
     },
@@ -52,7 +57,11 @@ const Blog = () => {
             Latest Blogs
           </h1>
         </div>
-        <img src={shapeArrow} alt="shape" className="pointer-events-none absolute left-8 top-9 h-14 w-14 z-20" />
+        <img
+          src={shapeArrow}
+          alt="shape"
+          className="pointer-events-none absolute left-8 top-9 h-14 w-14 z-20"
+        />
       </section>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
