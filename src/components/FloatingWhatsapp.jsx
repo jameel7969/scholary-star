@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FloatingWhatsapp = ({ phone = '923147969026', message = "Hello Scholary Star Science Academy! I'd like to know more about your subjects and mentoring." }) => {
+const FloatingWhatsapp = ({ phone = '923186514150', message = "Hello Scholary Star Science Academy! I'd like to know more about your subjects and mentoring." }) => {
   const text = encodeURIComponent(message)
   const href = `https://wa.me/${phone}?text=${text}`
   return (
