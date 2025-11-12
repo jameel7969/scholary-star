@@ -163,10 +163,6 @@ const Courses = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="mt-4 flex items-center justify-between text-sm">
-                <span className="text-slate-500">Beginner to Advanced</span>
-                <a href="/courses" className="text-emerald-700 font-semibold">Explore classes →</a>
-              </div> */}
             </article>
           ))}
         </div>
@@ -183,20 +179,6 @@ const Courses = () => {
             <li>Certificates for your portfolio</li>
           </ul>
         </div>
-
-        {/* Featured Classes */}
-        {/* <div className="mt-12">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">Featured Classes</h3>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { id:'c1', title:'Algebra Fundamentals', image:'/src/assets/course-03.jpg', teacher:'By A. Mentor', price:'$29'},
-              { id:'c2', title:'Intro to Biology Lab', image:'/src/assets/course-05.jpg', teacher:'By B. Mentor', price:'$39'},
-              { id:'c3', title:'Creative Drawing', image:'/src/assets/course-10.jpg', teacher:'By C. Mentor', price:'$35'},
-            ].map(c => (
-              <CourseCard key={c.id} {...c} />
-            ))}
-          </div>
-        </div> */}
       </div>
 
       {/* Left drawer for subject details */}
@@ -218,11 +200,15 @@ const Courses = () => {
         >
           {active && (
             <div className="flex h-full flex-col">
-              {/* <div className="relative h-44 overflow-hidden">
-                <img src={active.image} alt={active.title} className="h-full w-full object-cover" />
-                <button onClick={closeDrawer} className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-700 shadow">✕</button>
-              </div> */}
               <div className="flex-1 overflow-y-auto p-6">
+                {/* ✅ Close button added at the top right */}
+                <button
+                  onClick={closeDrawer}
+                  className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700 shadow hover:bg-slate-200 transition"
+                >
+                  ✕
+                </button>
+
                 <h3 className="text-xl font-bold text-slate-900">
                   {active.title}
                 </h3>
