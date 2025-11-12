@@ -4,6 +4,16 @@ import { IoPlay } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import VideoModal from "./VideoModal";
 
+// ✅ Import all images
+import heroShape3 from "../assets/hero-shape-3.png";
+import heroShape4 from "../assets/hero-shape-4.png";
+import promoShape2 from "../assets/promo-shape-2.png";
+import heroAuthor1 from "../assets/hero-author-1.png";
+import heroAuthor2 from "../assets/hero-author-2.png";
+import heroAuthor3 from "../assets/hero-author-3.png";
+import heroAuthor4 from "../assets/hero-author-4.png";
+import team3 from "../assets/team-3.png";
+
 const Hero = () => {
   const [open, setOpen] = useState(false);
   const user = useSelector((state) => state.auth?.user);
@@ -21,17 +31,17 @@ const Hero = () => {
     <section className="relative isolate overflow-hidden bg-[#eef4fb]">
       {/* decorative shapes */}
       <img
-        src="/src/assets/hero-shape-3.png"
+        src={heroShape3}
         alt=""
         className="pointer-events-none select-none hidden lg:block absolute -right-8 top-24 w-40 opacity-80"
       />
       <img
-        src="/src/assets/hero-shape-4.png"
+        src={heroShape4}
         alt=""
         className="pointer-events-none select-none hidden lg:block absolute left-16 bottom-16 w-10 opacity-70"
       />
       <img
-        src="/src/assets/promo-shape-2.png"
+        src={promoShape2}
         alt=""
         className="pointer-events-none select-none hidden xl:block absolute right-32 top-48 w-60 opacity-90"
       />
@@ -46,13 +56,10 @@ const Hero = () => {
           </div>
           <h1 className="h1 mt-5 xl:!text-[48px] 2xl:!text-[56px]">
             Start learning from
-            <br /> the world’s{" "}
+            <br /> the world's{" "}
             <span className="text-teal-600">best institutions</span>
           </h1>
           <div className="mt-6 flex items-center gap-3">
-            {/* <a href="#courses" className="btn-primary !py-2.5 rounded-full">
-              {user ? "Explore Subjects" : "Get Started"}
-            </a> */}
             <button
               onClick={() => setOpen(true)}
               className="inline-flex items-center gap-2 text-slate-700 btn-primary cursor-pointer"
@@ -76,10 +83,10 @@ const Hero = () => {
           </div>
           <div className="mt-6 flex items-center gap-4 text-slate-700">
             <div className="avatar-stack">
-              <img src="/src/assets/hero-author-1.png" alt="" />
-              <img src="/src/assets/hero-author-2.png" alt="" />
-              <img src="/src/assets/hero-author-3.png" alt="" />
-              <img src="/src/assets/hero-author-4.png" alt="" />
+              <img src={heroAuthor1} alt="" />
+              <img src={heroAuthor2} alt="" />
+              <img src={heroAuthor3} alt="" />
+              <img src={heroAuthor4} alt="" />
             </div>
             <div className="text-sm">
               <span className="font-semibold">10k</span> Enrolment
@@ -95,7 +102,7 @@ const Hero = () => {
         <div className="flex-[0.5] w-full max-w-xs sm:max-w-md md:max-w-lg mx-auto md:mx-0">
           <div className="relative rounded-[24px] sm:rounded-[36px] overflow-hidden">
             <img
-              src="/src/assets/team-3.png"
+              src={team3}
               alt="Student"
               className="w-full h-auto rounded-[24px] sm:rounded-[36px]"
             />

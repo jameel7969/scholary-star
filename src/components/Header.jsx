@@ -28,7 +28,7 @@ const Header = () => {
           <img
             src={favicon}
             alt="logo"
-            className="h-9 w-9 rounded-lg object-cover"
+            className="h-auto w-9 rounded-lg object-cover"
           />
           <span className="text-base font-extrabold tracking-tight text-slate-900">
             Scholary Star

@@ -4,75 +4,87 @@ import pageHeaderBg from "../assets/page-header-bg.png";
 import Breadcrumbs from "../components/Breadcrumbs";
 import CourseCard from "../components/CourseCard";
 
+// ✅ Import all category images
+import category1 from "../assets/category-1.png";
+import category2 from "../assets/category-2.png";
+import category3 from "../assets/category-3.png";
+import category4 from "../assets/category-4.png";
+import category5 from "../assets/category-5.png";
+import category6 from "../assets/category-6.png";
+import category7 from "../assets/category-7.png";
+import about1 from "../assets/about-1.png";
+import about2 from "../assets/about-2.png";
+import content1 from "../assets/content-1.png";
+
 const Courses = () => {
   const subjects = [
     {
       id: "math",
       title: "Mathematics",
-      image: "/src/assets/category-1.png",
+      image: category1,
       topics: ["Algebra", "Geometry", "Calculus", "Statistics"],
       desc: "Master numbers, patterns and problem solving.",
     },
     {
       id: "science",
       title: "Science",
-      image: "/src/assets/category-2.png",
+      image: category2,
       topics: ["Biology", "Chemistry", "Physics", "Earth Science"],
       desc: "Explore life, matter and the universe with experiments.",
     },
     {
       id: "arts",
       title: "Arts",
-      image: "/src/assets/category-3.png",
+      image: category3,
       topics: ["Drawing", "Music", "Theatre", "Design"],
       desc: "Grow your creativity with studio practice and critique.",
     },
     {
       id: "business",
       title: "Business",
-      image: "/src/assets/category-4.png",
+      image: category4,
       topics: ["Accounting", "Marketing", "Finance", "Entrepreneurship"],
       desc: "Learn how companies work and how to build one.",
     },
     {
       id: "technology",
       title: "Technology",
-      image: "/src/assets/category-5.png",
+      image: category5,
       topics: ["Web", "AI/ML", "Cloud", "Data"],
       desc: "Build software and modern tech skills for careers.",
     },
     {
       id: "languages",
       title: "Languages",
-      image: "/src/assets/category-6.png",
+      image: category6,
       topics: ["English", "Spanish", "French", "German"],
       desc: "Speak with confidence and improve communication.",
     },
     {
       id: "health",
       title: "Health & Fitness",
-      image: "/src/assets/category-7.png",
+      image: category7,
       topics: ["Nutrition", "Anatomy", "Wellness", "Sports"],
       desc: "Healthy body and mind through science-backed practice.",
     },
     {
       id: "history",
       title: "History",
-      image: "/src/assets/about-1.png",
+      image: about1,
       topics: ["World", "Ancient", "Modern", "Culture"],
       desc: "Understand people and events that shaped our world.",
     },
     {
       id: "geo",
       title: "Geography",
-      image: "/src/assets/about-2.png",
+      image: about2,
       topics: ["Maps", "Environment", "Climate", "Population"],
       desc: "Study the earth, resources and human patterns.",
     },
     {
       id: "eco",
       title: "Economics",
-      image: "/src/assets/content-1.png",
+      image: content1,
       topics: ["Micro", "Macro", "Markets", "Policy"],
       desc: "Decisions, incentives and how markets operate.",
     },
@@ -80,7 +92,10 @@ const Courses = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [active, setActive] = useState(null);
-  const openDrawer = (s) => { setActive(s); setDrawerOpen(true) };
+  const openDrawer = (s) => {
+    setActive(s);
+    setDrawerOpen(true);
+  };
   const closeDrawer = () => setDrawerOpen(false);
 
   return (
@@ -185,9 +200,22 @@ const Courses = () => {
       </div>
 
       {/* Left drawer for subject details */}
-      <div className={`fixed inset-0 z-50 ${drawerOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-        <div className={`absolute inset-0 bg-slate-900/50 transition-opacity ${drawerOpen ? 'opacity-100' : 'opacity-0'}`} onClick={closeDrawer} />
-        <aside className={`absolute left-0 top-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform duration-300 ${drawerOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div
+        className={`fixed inset-0 z-50 ${
+          drawerOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        <div
+          className={`absolute inset-0 bg-slate-900/50 transition-opacity ${
+            drawerOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={closeDrawer}
+        />
+        <aside
+          className={`absolute left-0 top-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform duration-300 ${
+            drawerOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
           {active && (
             <div className="flex h-full flex-col">
               {/* <div className="relative h-44 overflow-hidden">
@@ -195,16 +223,29 @@ const Courses = () => {
                 <button onClick={closeDrawer} className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-700 shadow">✕</button>
               </div> */}
               <div className="flex-1 overflow-y-auto p-6">
-                <h3 className="text-xl font-bold text-slate-900">{active.title}</h3>
+                <h3 className="text-xl font-bold text-slate-900">
+                  {active.title}
+                </h3>
                 <p className="mt-1 text-slate-700">{active.desc}</p>
                 <div className="mt-4">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Topics</div>
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    Topics
+                  </div>
                   <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-600">
-                    {active.topics.map((t,i)=>(<span key={i} className="rounded-full bg-slate-100 px-3 py-1">{t}</span>))}
+                    {active.topics.map((t, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full bg-slate-100 px-3 py-1"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="mt-6">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Classes</div>
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    Classes
+                  </div>
                   <ul className="mt-2 space-y-2 text-sm text-slate-700">
                     <li>Beginner class — 6 weeks</li>
                     <li>Intermediate class — 8 weeks</li>
